@@ -2,7 +2,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
   annotations:
-    containerImage: quay.io/keycloak/keycloak-operator:24.0.4
+    containerImage: quay.io/keycloaktesting/keycloak-operator:24.0.4
     repository: https://github.com/keycloak/keycloak
     capabilities: Deep Insights
     categories: Security
@@ -45,7 +45,7 @@ metadata:
       ]
     support: Red Hat
     description: An Operator for installing and managing Keycloak
-    createdAt: "2024-05-10T07:10:15Z"
+    createdAt: "2024-05-16T09:07:24Z"
   name: keycloak-operator.v24.0.4
   namespace: placeholder
 spec:
@@ -101,7 +101,7 @@ spec:
                 containers:
                   - env:
                       - name: RELATED_IMAGE_KEYCLOAK
-                        value: quay.io/keycloak/keycloak:24.0.4
+                        value: quay.io/keycloaktesting/keycloak:24.0.4
                       - name: QUARKUS_OPERATOR_SDK_CONTROLLERS_KEYCLOAKCONTROLLER_NAMESPACES
                         valueFrom:
                           fieldRef:
@@ -116,7 +116,7 @@ spec:
                             fieldPath: metadata.name
                       - name: OPERATOR_NAME
                         value: keycloak-operator
-                    image: quay.io/keycloak/keycloak-operator:24.0.4
+                    image: quay.io/keycloaktesting/keycloak-operator:24.0.4
                     imagePullPolicy: Always
                     name: keycloak-operator
                     resources: {}
